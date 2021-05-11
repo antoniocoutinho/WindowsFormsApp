@@ -22,7 +22,7 @@ namespace MysqlStudentCRUD
             catch (MySqlException ex)
             {
 
-                c
+                MessageBox.Show("MySqlException" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return con;
         }
@@ -45,7 +45,7 @@ namespace MysqlStudentCRUD
             catch (MySqlException ex)
             {
 
-                MessageBox.Show("MySqlException" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("MySqlException", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
