@@ -49,5 +49,59 @@ namespace MysqlStudentCRUD
             }
             con.Close();
         }
+
+        public void UpdateStudent(Student std, string id)
+        {
+            string sql = "UPDATE STUDENT_TABLE SET Name = @StudentName, Reg = @StudentReg, Class = @StudentClass, Section = @StudentSection WHERE ID = @StudentID ";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@StudentName", MySqlDbType.VarChar).Value = std.Name;
+            cmd.Parameters.Add("@StudentReg", MySqlDbType.VarChar).Value = std.Reg;
+            cmd.Parameters.Add("@StudentClass", MySqlDbType.VarChar).Value = std.Class;
+            cmd.Parameters.Add("@StudentSection", MySqlDbType.VarChar).Value = std.Section;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Updarted Succesfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show("MySqlException " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+        public void DeleteStudent(string id)
+        {
+            string sql = "DELETE FROM STUDENT_TABLE WHERE ID = @StudentID ";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@StudentID", MySqlDbType.VarChar).Value = id;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Studente deleted Succesfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show("Student Not deleted  \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void DisplayAndSearch(string query, DataGridView dgv)
+        {
+            string sql = query;
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql,con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataTable tbl = new DataTable();
+            adp.Fill(tbl);
+            con.Close();
+        }
     }
 }
