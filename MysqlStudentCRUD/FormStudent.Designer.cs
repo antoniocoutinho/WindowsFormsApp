@@ -32,15 +32,15 @@ namespace MysqlStudentCRUD
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtReg = new System.Windows.Forms.TextBox();
-            this.txtClass = new System.Windows.Forms.TextBox();
             this.txtSection = new System.Windows.Forms.TextBox();
+            this.txtClass = new System.Windows.Forms.TextBox();
+            this.txtReg = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -85,32 +85,43 @@ namespace MysqlStudentCRUD
             this.panel2.Size = new System.Drawing.Size(438, 418);
             this.panel2.TabIndex = 1;
             // 
-            // label2
+            // txtSection
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name:";
+            this.txtSection.Location = new System.Drawing.Point(35, 297);
+            this.txtSection.Name = "txtSection";
+            this.txtSection.Size = new System.Drawing.Size(311, 23);
+            this.txtSection.TabIndex = 8;
             // 
-            // label3
+            // txtClass
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 194);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Class:";
+            this.txtClass.Location = new System.Drawing.Point(35, 227);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(311, 23);
+            this.txtClass.TabIndex = 7;
             // 
-            // label4
+            // txtReg
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Reg.:";
+            this.txtReg.Location = new System.Drawing.Point(35, 157);
+            this.txtReg.Name = "txtReg";
+            this.txtReg.Size = new System.Drawing.Size(311, 23);
+            this.txtReg.TabIndex = 6;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(35, 79);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(311, 23);
+            this.txtName.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(35, 363);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label5
             // 
@@ -121,42 +132,32 @@ namespace MysqlStudentCRUD
             this.label5.TabIndex = 3;
             this.label5.Text = "Section:";
             // 
-            // btnSave
+            // label4
             // 
-            this.btnSave.Location = new System.Drawing.Point(35, 363);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(35, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Reg.:";
             // 
-            // txtName
+            // label3
             // 
-            this.txtName.Location = new System.Drawing.Point(35, 79);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(311, 23);
-            this.txtName.TabIndex = 5;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 194);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Class:";
             // 
-            // txtReg
+            // label2
             // 
-            this.txtReg.Location = new System.Drawing.Point(35, 157);
-            this.txtReg.Name = "txtReg";
-            this.txtReg.Size = new System.Drawing.Size(311, 23);
-            this.txtReg.TabIndex = 6;
-            // 
-            // txtClass
-            // 
-            this.txtClass.Location = new System.Drawing.Point(35, 227);
-            this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(311, 23);
-            this.txtClass.TabIndex = 7;
-            // 
-            // txtSection
-            // 
-            this.txtSection.Location = new System.Drawing.Point(35, 297);
-            this.txtSection.Name = "txtSection";
-            this.txtSection.Size = new System.Drawing.Size(311, 23);
-            this.txtSection.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Name:";
             // 
             // FormStudent
             // 

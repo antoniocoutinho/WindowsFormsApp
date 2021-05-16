@@ -150,30 +150,35 @@ namespace MysqlStudentCRUD
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "ID";
             this.Column1.HeaderText = "#";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "Name";
             this.Column2.HeaderText = "Name";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "Reg";
             this.Column3.HeaderText = "Reg.";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "Class";
             this.Column4.HeaderText = "Class";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "Selection";
             this.Column5.HeaderText = "Section";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -236,6 +241,7 @@ namespace MysqlStudentCRUD
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Info";
             this.Load += new System.EventHandler(this.StudentInfo_Load);
+            this.Shown += new System.EventHandler(this.StudentInfo_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

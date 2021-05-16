@@ -16,7 +16,10 @@ namespace MysqlStudentCRUD
         {
             InitializeComponent();
         }
-
+        public void Display()
+        {
+            DBStudent.DisplayAndSearch("SELECT ID, Name, Reg, Class, Section FROM student_table", dataGridView);
+        }
         private void StudentInfo_Load(object sender, EventArgs e)
         {
 
@@ -29,8 +32,13 @@ namespace MysqlStudentCRUD
         
         private void button1_Click(object sender, EventArgs e)
         {
-            FormStudent formSudent = new FormStudent();
+            FormStudent formSudent = new FormStudent(this);
             formSudent.ShowDialog();
+        }
+
+        private void StudentInfo_Shown(object sender, EventArgs e)
+        {
+            Display();
         }
     }
 }

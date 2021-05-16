@@ -11,7 +11,7 @@ namespace MysqlStudentCRUD
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "Server=localhost;Database=student;Uid=root;Pwd=";
+            string sql = "Server=localhost;Database=student;Uid=root;Pwd=140288";
 
             MySqlConnection con = new MySqlConnection(sql);
             try
@@ -26,7 +26,7 @@ namespace MysqlStudentCRUD
             }
             return con;
         }
-        public void AddStudent(Student std)
+        public static void AddStudent(Student std)
         {
             string sql = "INSERT INTO STUDENT_TABLE VALUES (NULL, @StudentName, @StudentReg, @StudentClass, @StudentSection, NULL )";
             MySqlConnection con = GetConnection();
@@ -50,7 +50,7 @@ namespace MysqlStudentCRUD
             con.Close();
         }
 
-        public void UpdateStudent(Student std, string id)
+        public static void UpdateStudent(Student std, string id)
         {
             string sql = "UPDATE STUDENT_TABLE SET Name = @StudentName, Reg = @StudentReg, Class = @StudentClass, Section = @StudentSection WHERE ID = @StudentID ";
             MySqlConnection con = GetConnection();
@@ -73,7 +73,7 @@ namespace MysqlStudentCRUD
             }
             con.Close();
         }
-        public void DeleteStudent(string id)
+        public static void DeleteStudent(string id)
         {
             string sql = "DELETE FROM STUDENT_TABLE WHERE ID = @StudentID ";
             MySqlConnection con = GetConnection();
@@ -101,6 +101,7 @@ namespace MysqlStudentCRUD
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataTable tbl = new DataTable();
             adp.Fill(tbl);
+            dgv.DataSource = tbl;
             con.Close();
         }
     }
