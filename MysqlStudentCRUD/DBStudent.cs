@@ -11,7 +11,7 @@ namespace MysqlStudentCRUD
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "Server=localhost;Database=student;Uid=root;Pwd=140288";
+            string sql = "Server=localhost;Database=student;Uid=root;Pwd=**";
 
             MySqlConnection con = new MySqlConnection(sql);
             try
